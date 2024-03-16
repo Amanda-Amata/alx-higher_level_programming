@@ -9,7 +9,7 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur.MySQLdb.connect()
     cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'"
-                .format(sys.agrv[4]))
+                .format(sys.argv[4]))
     results = cur.fetchall()
     for row in results:
         print(row)
