@@ -19,11 +19,14 @@ def find_peak(list_of_integers):
         if list_of_integers[middle_indx - 1] < list_of_integers[middle_indx] and\
             list_of_integers[middle_indx + 1] < list_of_integers[middle_indx]:
             return list_of_integers[middle_indx]
+        elif list_of_integers[middle_indx] == list_of_integers[middle_indx + 1]:
+            return list_of_integers[middle_indx]
     else:
         if list_of_integers[middle_indx - 1] < list_of_integers[middle_indx]:
             return list_of_integers[middle_indx]
         else:
             return list_of_integers[middle_indx - 1]
+
     if list_of_integers[middle_indx - 1] > list_of_integers[middle_indx]:
         a_list = list_of_integers[0:middle_indx]
     else:
