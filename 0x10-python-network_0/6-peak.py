@@ -1,35 +1,19 @@
 #!/usr/bin/python3
-"""  function that finds a peak in a list of unsorted integers
-    Args:
-        list_of_integers: A list of unsorted integers
-    Returns:
-        The peak element in the list of integers.
+"""function that finds a peak in a list of unsorted integers
+    THOUGHT PROCESS
+        it is not sorted, sorting would take n(log(n))
+            -> not worth sorting
+        looping through and keeping track of max (brute force)
+            -> O(n)
+        possibly looping from each end reducing to 1/2 run time
+            -> still O(n)
 """
 
 def find_peak(list_of_integers):
-    if list_of_integers is None or len(list_of_integers) == 0:
-        return None
-
-    if len(list_of_integers) == 1:
-        return list_of_integers[0]
-
-    middle_indx = int(len(list_of_integers) / 2)
-
-    if middle_indx != len(list_of_integers) - 1:
-        if list_of_integers[middle_indx - 1] < list_of_integers[middle_indx] and\
-            list_of_integers[middle_indx + 1] < list_of_integers[middle_indx]:
-            return list_of_integers[middle_indx]
-        elif list_of_integers[middle_indx] == list_of_integers[middle_indx + 1]:
-            return list_of_integers[middle_indx]
-    else:
-        if list_of_integers[middle_indx - 1] < list_of_integers[middle_indx]:
-            return list_of_integers[middle_indx]
-        else:
-            return list_of_integers[middle_indx - 1]
-
-    if list_of_integers[middle_indx - 1] > list_of_integers[middle_indx]:
-        a_list = list_of_integers[0:middle_indx]
-    else:
-        a_list = list_of_integers[middle_indx + 1:]
-
-    return find_peak(a_list)
+    """BRUTE force implementation for question
+    """
+    max_i = None
+    for ele in list_of_integers:
+        if max_i is None or max_i < ele:
+            max_i = ele
+    return max_i
