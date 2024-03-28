@@ -4,7 +4,7 @@
     variable found in the header of the response
 """
 import sys
-import urllib.requests
+import urllib.request
 """ sys imports the arguments passed to the script
     urllib imports the module request
 """

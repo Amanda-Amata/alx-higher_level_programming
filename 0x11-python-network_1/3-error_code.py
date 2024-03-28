@@ -3,7 +3,7 @@
     and displays the body of the response (decoded in utf-8).
 """
 import sys
-import urllib.requests
+import urllib.request
 import urllib.error
 """ sys imports arguments passed to the script
     urllib imports error and request modules
@@ -15,5 +15,5 @@ if __name__ == "__main__":
     try:
         with urllib.request.urlopen(req) as response:
             print(response.read().decode("ascii"))
-        except urllib.error.HTTPError as e:
-            print("Error code: {}".format(e.code))
+    except urllib.error.HTTPError as e:
+        print("Error code: {}".format(e.code))

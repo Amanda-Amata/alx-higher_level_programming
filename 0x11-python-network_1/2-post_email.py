@@ -4,7 +4,7 @@
     and displays the body of the response (decoded in utf-8)
 """
 import sys
-import urllib.requests
+import urllib.request
 import urllib.parse
 """ sys imports the arguments passed to the script
     urllib imports the request and parse modules
