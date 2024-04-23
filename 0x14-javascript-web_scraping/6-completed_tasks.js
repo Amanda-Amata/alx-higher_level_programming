@@ -3,8 +3,8 @@ const request = require('request');
 const url = 'https://jsonplaceholder.typicode.com/todos';
 
 request.get(url, (err, reponse, body) => {
-	if (!err) {
-		const todos = JSON.parse(body);
+  if (!err) {
+    const todos = JSON.parse(body);
     const completed = {};
     todos.forEach((todo) => {
       if (todo.completed && completed[todo.userId] === undefined) {
